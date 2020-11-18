@@ -88,10 +88,10 @@ module Jekyll
 
       tags.sort!.map! { |tag, size| [tag, range.quantile(size, num)] }
     end
-
+    
     def active_tags
       return site.tags unless site.config["ignored_tags"]
-      site.tags.reject { |t| site.config["ignored_tags"].include? t[0] }
+      site.tags.reject { |t| site.config["ignored_tags"].include? t }
     end
 
     def pretty?
